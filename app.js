@@ -31,5 +31,24 @@ const addTodo = e => {
   todoInput.value = ''
 }
 
+const deleteCheck = e => {
+  const item = e.target
+  // Delete Todo
+  if (item.classList[0] === 'trash-button') {
+    const todo = item.parentElement
+    // Animation
+    todo.classList.add('fall')
+    todo.addEventListener('transitionend', () => {
+      todo.remove()
+    })
+  }
+  //   Cjecl Mark
+  if (item.classList[0] === 'complete-button') {
+    const todo = item.parentElement
+    todo.classList.toggle('completed')
+  }
+}
+
 //* Event Listeners
 todoButton.addEventListener('click', addTodo)
+todoList.addEventListener('click', deleteCheck)
