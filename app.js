@@ -23,10 +23,12 @@ const addTodo = e => {
   //   Trash Button
   const trashButton = document.createElement('button')
   trashButton.innerHTML = '<i class="fas fa-trash"></i>'
-  trashButton.classList.add('complete-button')
+  trashButton.classList.add('trash-button')
   todoDiv.appendChild(trashButton)
   //   Append To List
   todoList.appendChild(todoDiv)
+  //   Clear Todo Input Value
+  todoInput.value = ''
 }
 
 //* Event Listeners
